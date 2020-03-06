@@ -6,3 +6,7 @@ services:
     image: dannyben/mdbook
     volumes:
     - .:/app
+
+  test:
+    image: dannyben/mdbook
+    command: --version
