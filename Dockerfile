@@ -1,13 +1,9 @@
-FROM dannyben/rush
+FROM dannyben/rush:0.5.0
 
-# Environment
-ENV PS1 "\n\n>> mdbook \W \$ "
 WORKDIR /app
-
-# Install mdbook
-RUN rush clone dannyben --name default && \
-    rush get mdbook
-
-# Boom
 VOLUME /app
+
+RUN echo 'export PS1="\\n\\n>> mdbook \W \$ "' >> /root/.bashrc
+RUN rush snatch dannyben mdbook
+
 ENTRYPOINT ["mdbook"]
