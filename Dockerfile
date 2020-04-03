@@ -1,4 +1,4 @@
-FROM dannyben/rush:0.5.0
+FROM dannyben/rush:0.5.4
 
 WORKDIR /app
 VOLUME /app
